@@ -1,26 +1,36 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./App.css";
+import instaLogo from "./images/instagramlogo.png";
+import Post from "./components/Post";
+import { useState } from "react";
 
-function App() {
+const App = () => {
+  const [posts, setPosts] = useState([
+    {
+      username: "shanikutta",
+      caption: "mujhe nai pata kia hai",
+      imageURL: "https://vuejs.org/images/logo.png",
+    },
+    {
+      username: "shanikutta",
+      caption: "mujhe nai pata kia hai",
+      imageURL: "https://vuejs.org/images/logo.png",
+    },
+  ]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <div className="App">
+        <div className="app__header">
+          <img className="app__headerImage" src={instaLogo} alt="Logo" />
+        </div>
+        {/* <h1>Lets Builds Clone React 🚀</h1> */}
+        {posts.map((posty) => {
+          <Post username={posty.username} caption={posty.caption} />;
+        })}
+      </div>
     </div>
   );
-}
+};
 
 export default App;
