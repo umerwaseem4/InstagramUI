@@ -9,6 +9,7 @@
 
 .app__headerImage {
   height: 50px;
+  object-fit: contain;
 }
 
 .app__header {
@@ -16,4 +17,16 @@
   object-fit: contain;
   padding: 20px;
   border-bottom: 1px solid lightgrey;
+  display: flex;
+  justify-content: space-between;
+}
+
+.signupForm {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.app__posts {
+  padding: 20px;
 }
